@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" ?>
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.4]]></item>
@@ -56,6 +56,7 @@
 				</item>
 			</item>
 		</item>
+		<item id="version"><![CDATA[X3.2,X3.3,X3.4,F1.0,L1.0]]></item>
 		<item id="var">
 			<item id="0">
 				<item id="displayorder"><![CDATA[0]]></item>
@@ -113,7 +114,6 @@
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 		</item>
-		<item id="version"><![CDATA[X3.2,X3.3,X3.4,F1.0,L1.0]]></item>
 		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
 	</item>
 </root>
