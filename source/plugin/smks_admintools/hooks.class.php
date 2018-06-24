@@ -19,6 +19,8 @@ class plugin_smks_admintools {
 		global $_G;
 		$this->vars=$_G['cache']['plugin']['smks_admintools'];	
 		$this->uids= explode(",",trim($this->vars['uids']));
+		$setting = $_G['cache']['plugin']['smks_admintools'];
+		$this->usergroups = unserialize($setting['usergroups']);
 		$this->appname=lang('plugin/smks_admintools','appname');
 		$this->nav=intval($this->vars['nav']);
 	}
@@ -32,8 +34,13 @@ class plugin_smks_admintools_forum extends plugin_smks_admintools{
 		global $_G,$postlist;
 		$return=array();
 		loadcache('plugin');
-		$uids= explode(",",trim($_G['cache']['plugin']['smks_admintools']['uids']));
-		if ($_G['uid']==''||!in_array($_G['uid'],$uids)){
+		// $uids= explode(",",trim($_G['cache']['plugin']['smks_admintools']['uids']));
+		// if ($_G['uid']==''||!in_array($_G['uid'],$uids)){
+			// return $return;
+		// }
+		$setting = $_G['cache']['plugin']['smks_admintools'];
+		$setting['usergroups'] = unserialize($setting['usergroups']);
+		if (!in_array($_G['groupid'], $setting['usergroups'])){
 			return $return;
 		}		
 		foreach($postlist as $pid=>$post){
@@ -63,9 +70,14 @@ class plugin_smks_admintools_forum extends plugin_smks_admintools{
 	    loadcache('plugin');
 		global $_G;
 		if($this->nav!=2) return '';
-		if($_G['uid']&&in_array($_G['uid'],$this->uids)){
-			return '<a href="plugin.php?id=smks_admintools:retime&mod=single&tid='.$_G['tid'].'"><span style="font: bold Arial; color: #fbb040;">'.$this->appname.'</span></a>';
+		$setting = $_G['cache']['plugin']['smks_admintools'];
+		$setting['usergroups'] = unserialize($setting['usergroups']);
+		if (!in_array($_G['groupid'], $setting['usergroups'])){
+			return '';
 		}
+		//if($_G['uid']&&in_array($_G['uid'],$this->uids)){
+			return '<a href="plugin.php?id=smks_admintools:retime&mod=single&tid='.$_G['tid'].'"><span style="font: bold Arial; color: #fbb040;">'.$this->appname.'</span></a>';
+		//}
 		return '';
 	}
 	
@@ -73,9 +85,14 @@ class plugin_smks_admintools_forum extends plugin_smks_admintools{
 	    loadcache('plugin');
 		global $_G;
 		if($this->nav!=1) return '';
-		if($_G['uid']&&in_array($_G['uid'],$this->uids)){
-			return '<a href="plugin.php?id=smks_admintools:retime&mod=single&tid='.$_G['tid'].'"><span style="font: bold Arial; color: #fbb040;">'.$this->appname.'</span></a>';
+		$setting = $_G['cache']['plugin']['smks_admintools'];
+		$setting['usergroups'] = unserialize($setting['usergroups']);
+		if (!in_array($_G['groupid'], $setting['usergroups'])){
+			return '';
 		}
+		//if($_G['uid']&&in_array($_G['uid'],$this->uids)){
+			return '<a href="plugin.php?id=smks_admintools:retime&mod=single&tid='.$_G['tid'].'"><span style="font: bold Arial; color: #fbb040;">'.$this->appname.'</span></a>';
+		//}
 		return '';
 	}
 	
@@ -83,11 +100,16 @@ class plugin_smks_admintools_forum extends plugin_smks_admintools{
 	    loadcache('plugin');
 		global $_G;
 		if($this->nav!=3) return '';
-		if($_G['uid']&&in_array($_G['uid'],$this->uids)){
+		$setting = $_G['cache']['plugin']['smks_admintools'];
+		$setting['usergroups'] = unserialize($setting['usergroups']);
+		if (!in_array($_G['groupid'], $setting['usergroups'])){
+			return '';
+		}
+		//if($_G['uid']&&in_array($_G['uid'],$this->uids)){
 			$return=array();
 			$return[0]='<span class="pipe">|</span><a href="plugin.php?id=smks_admintools:retime&mod=single&tid='.$_G['tid'].'"><span style="font: bold Arial; color: #fbb040;">'.$this->appname.'</span></a>';
 			return $return;
-		}
+		//}
 	}
 }
 

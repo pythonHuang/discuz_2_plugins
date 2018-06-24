@@ -10,8 +10,11 @@ if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 loadcache('plugin');	
-$uids= explode(",",trim($_G['cache']['plugin']['smks_admintools']['uids']));
-if ($_G['uid']==''||!in_array($_G['uid'],$uids)){
+//$uids= explode(",",trim($_G['cache']['plugin']['smks_admintools']['uids']));
+$setting = $_G['cache']['plugin']['smks_admintools'];
+$setting['usergroups'] = unserialize($setting['usergroups']);
+		
+if (!in_array($_G['groupid'], $setting['usergroups'])){//$_G['uid']==''||!in_array($_G['uid'],$uids)
 	showmessage(lang('plugin/smks_admintools','error_1'),'javascript:history.back()',array(),array('refreshtime'=>3));	
 }
 $mod=in_array($_GET['mod'],array('single','term'))? $_GET['mod']:'single';
