@@ -44,8 +44,12 @@ class plugin_smks_admintools_forum extends plugin_smks_admintools{
 			return $return;
 		}		
 		foreach($postlist as $pid=>$post){
-			if($post['first']==1) $return[]='<span class="pipe">|</span><a href="plugin.php?id=smks_admintools:rereplytime&mod=term&tid='.$_G['tid'].'"><font color="red">'.lang('plugin/smks_admintools','doing_1').'</font></a>';
-			else $return[]='<span class="pipe">|</span><a href="plugin.php?id=smks_admintools:rereplytime&mod=single&tid='.$_G['tid'].'&pid='.$pid.'"><font color="red">'.lang('plugin/smks_admintools','doing_2').'</font></a></a>';
+			if($post['first']==1) {
+				//$return[]='<span class="pipe">|</span><a href="plugin.php?id=smks_admintools:rereplytime&mod=term&tid='.$_G['tid'].'"><font color="red">'.lang('plugin/smks_admintools','doing_1').'</font></a>';
+			}
+			else {
+				$return[]='<span class="pipe">|</span><a href="plugin.php?id=smks_admintools:rereplytime&mod=single&tid='.$_G['tid'].'&pid='.$pid.'"><font color="red">'.lang('plugin/smks_admintools','doing_2').'</font></a></a>';
+			}
 		}
 		return $return;
 	}

@@ -120,6 +120,8 @@
 				<item id="by2"><![CDATA[最后发表]]></item>
 				<item id="selectall"><![CDATA[全选:]]></item>
 				<item id="time_select_3"><![CDATA[修改时间范围:]]></item>
+				<item id="doing_1"><![CDATA[回复时间修改]]></item>
+				<item id="doing_2"><![CDATA[回复时间修改]]></item>
 				<item id="do1"><![CDATA[恭喜您，主题发布时间更新完成！]]></item>
 				<item id="do2"><![CDATA[错误！未选择任何要修改的主题!]]></item>
 				<item id="do3"><![CDATA[错误！未选择修改后的结束时间点!]]></item>
@@ -177,6 +179,8 @@
 				<item id="by2"><![CDATA[最后发表]]></item>
 				<item id="selectall"><![CDATA[全选:]]></item>
 				<item id="time_select_3"><![CDATA[修改时间范围:]]></item>
+				<item id="doing_1"><![CDATA[回复时间修改]]></item>
+				<item id="doing_2"><![CDATA[回复时间修改]]></item>
 				<item id="do1"><![CDATA[恭喜您，主题发布时间更新完成！]]></item>
 				<item id="do2"><![CDATA[错误！未选择任何要修改的主题!]]></item>
 				<item id="do3"><![CDATA[错误！未选择修改后的结束时间点!]]></item>

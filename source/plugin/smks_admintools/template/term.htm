@@ -1,30 +1,30 @@
-				<form method="post" action="plugin.php?id=nimba_replytime:retime&mod=term&tid={$tid}" name="term">
+				<form method="post" action="plugin.php?id=smks_admintools:retime&mod=term&tid={$tid}" name="term">
 				<input type="hidden" name="tid" value="{$tid}">
 				<input type="hidden" name="replies" value="{$data['replies']}">
 				<input type="hidden" name="formhash" value="{FORMHASH}"/>
 				<table width="100%" border="1" bordercolor="#cccccc">
 					<tr>
-						<td width="100" height="35" bgcolor="#F2F2F2" align="center">{lang nimba_replytime:subject}</td>
+						<td width="100" height="35" bgcolor="#F2F2F2" align="center">{lang smks_admintools:subject}</td>
 						<!--{if $tid!=0}-->
 						<td colspan="2">&nbsp;&nbsp;&nbsp;<a href="forum.php?mod=viewthread&tid={$tid}" target="_blank">{$data['subject']}</a></td>
 						<!--{/if}-->
 					</tr>
 					<tr>
-						<td height="35" bgcolor="#F2F2F2" align="center">{lang nimba_replytime:replies}</td>
+						<td height="35" bgcolor="#F2F2F2" align="center">{lang smks_admintools:replies}</td>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;{$data['replies']}</td>
 					</tr>
 					<tr>
-						<td height="35" bgcolor="#F2F2F2" align="center">{lang nimba_replytime:dateline}</td>
+						<td height="35" bgcolor="#F2F2F2" align="center">{lang smks_admintools:dateline}</td>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;{$data['dateline']}</td>
 					</tr>
 					<tr>
-						<td height="35" bgcolor="#F2F2F2" align="center">{lang nimba_replytime:lastpost}</td>
+						<td height="35" bgcolor="#F2F2F2" align="center">{lang smks_admintools:lastpost}</td>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;{$data['lastpost']}</td>
 					</tr>					
 					<tr>
 						<script src="static/js/admincp.js" type="text/javascript"></script>
 						<script src="static/js/calendar.js" type="text/javascript"></script>
-						<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang nimba_replytime:newtime1}</td>
+						<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang smks_admintools:newtime1}</td>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" class="px" size="10" value="" name="newtime1" onclick="showcalendar(event, this);"/> 
 						<select name="h" width="4" class="ps">
 							<option value="0">00</option>
@@ -181,7 +181,7 @@
 					<tr>
 						<script src="static/js/admincp.js" type="text/javascript"></script>
 						<script src="static/js/calendar.js" type="text/javascript"></script>
-						<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang nimba_replytime:newtime2}</td>
+						<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang smks_admintools:newtime2}</td>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" class="px" size="10" value="" name="newtime2" onclick="showcalendar(event, this);"/> 
 						<select name="hh" width="4" class="ps">
 							<option value="0">00</option>
@@ -336,13 +336,13 @@
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#F2F2F2" align="center">{lang nimba_replytime:info}</td>
+						<td bgcolor="#F2F2F2" align="center">{lang smks_admintools:info}</td>
 						<td colspan="2">
-						{lang nimba_replytime:infos}
+						{lang smks_admintools:infos}
 						</td>
 					</tr>
 				</table>
                 <div style="text-align:center; margin-top:20px;">
-					<button type="submit" name="submit" id="submit" value="true" class="pn pnp" /><strong>{lang nimba_replytime:submit1}</strong></button>
+					<button type="submit" name="submit" id="submit" value="true" class="pn pnp" /><strong>{lang smks_admintools:submit1}</strong></button>
 				</div>
 				</form>

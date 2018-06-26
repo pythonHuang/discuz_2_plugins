@@ -1,29 +1,29 @@
 {subtemplate common/header}
 <div id="pt" class="bm cl">
-<div class="z"><a href="./" class="nvhm">$_G[setting][bbname]</a><em>&rsaquo;</em><a href="./">$_G[setting][bbname]</a> <em>&rsaquo;</em><a href="plugin.php?id=nimba_retime:retime&mod=single">{lang nimba_retime:appname}</a> <em>&rsaquo;</em>$plugin_nav</div>
+<div class="z"><a href="./" class="nvhm">$_G[setting][bbname]</a><em>&rsaquo;</em><a href="./">$_G[setting][bbname]</a> <em>&rsaquo;</em><a href="plugin.php?id=smks_admintools:retime&mod=single">{lang smks_admintools:appname}</a> <em>&rsaquo;</em>$plugin_nav</div>
 </div>
 <div id="ct" class="ct2 wp cl">
 	<div class="mn">
     	<div class="bm bw0">
 			<ul class="tb cl">
-				<li <!--{if $_GET['mod']=='single' || empty($_GET['mod'])}-->class="a"<!--{/if}-->><a href="plugin.php?id=nimba_retime:retime&mod=single">{lang nimba_retime:single_nav}</a></li>
-				<li <!--{if $_GET['mod'] == 'term'}-->class="a"<!--{/if}-->><a href="plugin.php?id=nimba_retime:retime&mod=term">{lang nimba_retime:term_nav}</a></li>
+				<li <!--{if $_GET['mod']=='single' || empty($_GET['mod'])}-->class="a"<!--{/if}-->><a href="plugin.php?id=smks_admintools:retime&mod=single">{lang smks_admintools:single_nav}</a></li>
+				<!--{if 0}--><li <!--{if $_GET['mod'] == 'term'}-->class="a"<!--{/if}-->><a href="plugin.php?id=smks_admintools:retime&mod=term">{lang smks_admintools:term_nav}</a></li><!--{/if}-->
 			</ul>
 			<div class="datalist">
 				<!--{if $_GET['mod']=='single' || empty($_GET['mod'])}-->
-				<form method="post" action="plugin.php?id=nimba_retime:retime&mod=single&tid={$tid}" name="single">
+				<form method="post" action="plugin.php?id=smks_admintools:retime&mod=single&tid={$tid}" name="single">
 				<input type="hidden" name="tid" value="{$tid}">
 				<input type="hidden" name="oldtime" value="{$oldtime}" />
 				<input type="hidden" name="formhash" value="{FORMHASH}"/>
 				<table width="100%" border="1" bordercolor="#cccccc">
 					<tr>
-						<td width="100" height="35" bgcolor="#F2F2F2" align="center">{lang nimba_retime:subject}</td>
+						<td width="100" height="35" bgcolor="#F2F2F2" align="center">{lang smks_admintools:subject}</td>
 						<!--{if $tid!=0}-->
 						<td colspan="2">&nbsp;&nbsp;&nbsp;<a href="forum.php?mod=viewthread&tid={$tid}" target="_blank">{$data['subject']}</a></td>
 						<!--{else}-->
 						<td colspan="2">&nbsp;&nbsp;&nbsp;
-							<select name="newtid" id="newtid" width="268" class="ps" onchange="window.location.href='plugin.php?id=nimba_retime:retime&mod=single&tid='+this.value;">
-							<option value="">{lang nimba_retime:newthreads}</option>
+							<select name="newtid" id="newtid" width="268" class="ps" onchange="window.location.href='plugin.php?id=smks_admintools:retime&mod=single&tid='+this.value;">
+							<option value="">{lang smks_admintools:newthreads}</option>
 							<!--{if $newthreads}-->
 								<!--{loop $newthreads $thread}-->
 							<option value="{$thread['tid']}">{$thread['subject']}</option>
@@ -34,13 +34,13 @@
 						<!--{/if}-->
 					</tr>
 					<tr>
-						<td height="35" bgcolor="#F2F2F2" align="center">{lang nimba_retime:oldtime}</td>
+						<td height="35" bgcolor="#F2F2F2" align="center">{lang smks_admintools:oldtime}</td>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;{$data['dateline']}</td>
 					</tr>
 					<tr>
 						<script src="static/js/admincp.js" type="text/javascript"></script>
 						<script src="static/js/calendar.js" type="text/javascript"></script>
-						<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang nimba_retime:newtime}</td>
+						<td height="35" bgcolor="#F2F2F2" align="center"><span style="color:red;">*</span>{lang smks_admintools:newtime}</td>
 						<td colspan="2">&nbsp;&nbsp;&nbsp;<input type="text" class="px" size="10" value="" name="newtime" onclick="showcalendar(event, this);"/> 
 						<select name="h" width="4" class="ps">
 							<option value="0">00</option>
@@ -195,18 +195,18 @@
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="#F2F2F2" align="center">{lang nimba_retime:info}</td>
+						<td bgcolor="#F2F2F2" align="center">{lang smks_admintools:info}</td>
 						<td colspan="2">
-						{lang nimba_retime:infos}
+						{lang smks_admintools:infos}
 						</td>
 					</tr>
 				</table>
                 <div style="text-align:center; margin-top:20px;">
-					<button type="submit" name="submit" id="submit" value="true" class="pn pnp" /><strong>{lang nimba_retime:submit1}</strong></button>
+					<button type="submit" name="submit" id="submit" value="true" class="pn pnp" /><strong>{lang smks_admintools:submit1}</strong></button>
 				</div>
 				</form>
 				<!--{elseif $_GET[mod] == 'term' && $_G['uid']!=''}-->
-				{template nimba_retime:cp}
+				{template smks_admintools:cp}
                 <!--{/if}-->
 
 			</div>
@@ -216,11 +216,11 @@
 	<div class="sd"><!--提示信息-->
 		<div class="bm">
 			<div class="bm_h cl">
-				<h2>{lang nimba_retime:copyright}</h2>
+				<h2>{lang smks_admintools:copyright}</h2>
 			</div>
 			<div class="bm_c">
 				<ul class="xl" style="line-height:25px;">
-					{lang nimba_retime:copyrights}
+					{lang smks_admintools:copyrights}
 				</ul>
 			</div>
 		</div>
